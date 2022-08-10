@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --first-color: #66bb6a;
+    --second-color: #ff9800; /* -4% */
+    --text-color: hsl(219, 8%, 15%);
+    --text-color-light:  hsl(219, 8%, 75%);
+    --body-color: hsl(219, 100%, 99%);
+    --container-color: #fff;
+    --white-color: #fff;
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .920rem;
+    --smaller-font-size: .75rem;
+    --box-shadow: 0 0 1rem 0 rgba(153, 157, 169, 0.1);
+}
+::-webkit-scrollbar {
+    width:5px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: 10px;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+body {
+    background: var(--body-color);
+    color: var(--text-color);
+}
+/*=============== CALENDAR CSS ===============*/
+.calendar_boxes{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    padding: 1rem;
+    background: var(--container-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-bottom: 2rem;
+}
+.calendar_box{
+    position: relative;
+    display: inline-block;
+    margin: 0 .5rem;
+}
+.date_calendar{
+    width: 100%;
+    text-align: center;
+    color: var(--first-color);
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+.date_clocks{
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    max-height: 440px;
+}
+.date_clocks::-webkit-scrollbar,
+.date_clocks::-webkit-scrollbar-track,
+.date_clocks::-webkit-scrollbar-thumb{
+    width:0;
+    height: 0;
+    border-radius: 5px;
+    background: var(--container-color);
+}
+.date_clocks label{
+    padding: .5rem 1rem;
+    background: rgba(182, 224, 184, 0.4);
+    margin: .25rem 0;
+    border-radius: .25rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    color: var(--first-color);
+    transition: all .25s;
+    font-size: var(--normal-font-size);
+}
+.date_clocks label.active_clock{
+    background: hsl(219, 80%,97%);
+    color: var(--text-color-light);
+    cursor: not-allowed;
+}
+.date_clocks input:checked + label{
+    background: var(--first-color);
+    color: var(--white-color);
+}
+.day_name{
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light) !important;
+    font-weight: 400;
+}
